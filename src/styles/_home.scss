@@ -1,0 +1,19 @@
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    font-size: 3vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 60%;
+    border-radius: 10px;
+    padding: 20px 5vw;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

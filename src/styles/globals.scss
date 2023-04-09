@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #FFF;
+  background-color: #fff;
   // background: linear-gradient(
   //     to bottom,
   //     transparent,
@@ -45,4 +45,4 @@ body {
   }
 }
 
-@import "report";
+@import "home", "report", "restaurant";
