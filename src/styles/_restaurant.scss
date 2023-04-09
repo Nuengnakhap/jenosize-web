@@ -89,9 +89,9 @@
         }
 
         .image {
-          min-width: 25vw;
-          width: 25vw;
-          height: 25vw;
+          min-width: 200px;
+          width: 200px;
+          height: 200px;
           background-color: lightgrey;
           border-radius: 10px;
           overflow: hidden;
@@ -116,6 +116,12 @@
 
         @media screen and (max-width: 480px) {
           width: 80%;
+
+          .image {
+            min-width: 25vw;
+            width: 25vw;
+            height: 25vw;
+          }
 
           .detail {
             padding: 15px;
