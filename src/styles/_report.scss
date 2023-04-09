@@ -1,0 +1,325 @@
+$primary: #325eff;
+$grey01: #f2f2f2;
+$grey02: #c8c8c8;
+
+#report {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .text-primary {
+    color: $primary;
+  }
+
+  > .navbar {
+    background-color: $primary;
+
+    padding: 30px 10px 15px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .title {
+      font-weight: 600;
+      color: #fff;
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
+
+.tab-layout {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+
+  .tab-bar-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tab-item {
+    flex: 1;
+    border-bottom-width: 1px;
+    border-color: $grey01;
+    text-align: center;
+    padding: 10px 0;
+    color: $grey02;
+
+    &.active {
+      color: $primary;
+    }
+  }
+
+  .tab-divider {
+    background-color: $grey01;
+    width: 1px;
+    margin: 10px 0;
+  }
+
+  .tab-body {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+}
+
+.calendar-bar {
+  padding: 10px 16px;
+
+  > .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+      margin: 0px 15px;
+
+      .item {
+        flex: 1;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 1px solid $grey02;
+        color: $grey02;
+
+        &.active {
+          border-bottom: 3px solid $primary;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .body {
+    padding: 10px 0px 0px 0px;
+
+    .week-container {
+      display: flex;
+      flex-direction: row;
+
+      .week-cell {
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+
+    .calendar-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      padding-bottom: 10px;
+
+      .today {
+        color: $primary;
+        margin-bottom: 3px;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+    }
+
+    .calendar,
+    .day-row {
+      display: flex;
+      flex-direction: row;
+
+      .day-cell {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        // text-align: center;
+
+        .day-item {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.current {
+            border: 1px solid $primary;
+          }
+
+          &.active {
+            background-color: $primary;
+            color: #fff;
+          }
+
+          &.disabled {
+            color: $grey02;
+          }
+        }
+      }
+    }
+
+    .calendar-expandable {
+      margin: 0px -16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .divider {
+        height: 1px;
+        flex: 1;
+        background-color: $grey02;
+      }
+
+      .action {
+        border: 1px solid $grey02;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+.engagement {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  > .body {
+    padding: 0px 24px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow-y: scroll;
+
+    .title-date {
+      margin-bottom: 15px;
+    }
+
+    .summary-body {
+      .summary-row {
+        display: flex;
+        flex-direction: row;
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        .summary-cell {
+          flex: 1;
+          border-radius: 10px;
+          border: 1px solid $grey02;
+          padding: 20px 20px 40px 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+
+          .summary-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+          }
+
+          .summary-value {
+            font-size: 36px;
+            font-weight: 500;
+          }
+
+          .summary-desc {
+            font-size: 14px;
+            color: #cfcfcf;
+          }
+        }
+      }
+    }
+
+    .weekly-body {
+      display: flex;
+      flex-direction: column;
+
+      .weekly-menu {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 16px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .menu {
+          border: 1px solid $primary;
+          border-radius: 30px;
+          padding: 5px 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+
+          > p {
+            font-size: 12px;
+          }
+
+          &.active {
+            background-color: $primary;
+            > p {
+              color: #fff !important;
+            }
+          }
+        }
+      }
+
+      .data-list {
+        .data-row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .data-no {
+            background-color: #000;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+
+          .data-body {
+            flex: 1;
+            border: 1px solid $grey02;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+
+            .detail {
+              padding: 5px 10px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            }
+
+            .divider {
+              min-height: 100%;
+              width: 1px;
+              background-color: $grey02;
+              margin: 5px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
